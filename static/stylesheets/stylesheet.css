@@ -1,14 +1,14 @@
-.canvas {
+.drawing {
     display:block;
     position:relative;
-    width:1024px;
-    height:1024px;
-    background_color:blue;
+    width:2000px;
+    height:2586px;
+    top:100px;
 }
-.dropdown1 {
+.bus10-w-3b {
     position:absolute;
-    left:100px;
-    right:100px;
+    top:1700px;
+    left:180px;
 }
 
 

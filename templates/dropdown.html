@@ -12,14 +12,17 @@
           href="{{url_for('static', filename='stylesheets/stylesheet.css')}}">
         <script
           src="{{url_for('static', filename='bootstrap/js/bootstrap.min.js')}}"></script>
+        <script
+          src="{{url_for('static', filename='scripts/script.js')}}"></script>
         <script type="text/javascript">
         $('.dropdown-toggle').dropdown()</script>
     </head>
     <body>
-        <div class="canvas">
-            <div class="dropdown dropdown1">
+        <div class="drawing center-block">
+            <img class="img-responsive" src="{{url_for('static', filename='imgs/2000.2586.jpg')}}" alt="">
+            <div class="dropdown bus10-w-3b">
               <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                单元
+                3B母线
                 <span class="caret"></span>
               </button>
               <ul class="dropdown-menu" aria-labelledby="dropdownMenu">
@@ -27,7 +30,7 @@
                       <a class="dropdown-toggle" tabindex="-1" href="#">停电影响用户</a>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenu">
                               <li class="dropdown-submenu">
-                                  <a class="dropdown-toggle" tabindex="-1" href="#">1</a>
+                                  <a class="dropdown-toggle" tabindex="-1" href="#">廊涿城际</a>
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenu">
                                         <li><a tabindex="-1" href="#">高低压接线图</a></li>
                                         <li><a tabindex="-1" href="#">定值单</a></li>
@@ -37,8 +40,8 @@
                                         <li><a tabindex="-1" href="#">批准书</a></li>
                                     </ul>
                               </li>
-                            <li><a tabindex="-1" href="#">2</a></li>
-                            <li><a tabindex="-1" href="#">3</a></li>
+                            <li><a tabindex="-1" href="#">华北空管局</a></li>
+                            <li><a tabindex="-1" href="#">新机场建设指挥部</a></li>
                         </ul>
                   </li>
                   <li class="dropdown-submenu">
@@ -54,10 +57,10 @@
               </ul>
             </div>
         </div>
-    {% for key in user_dict %}
+    {% for k,v in user_dict.items() %}
     <div class="dropdown">
           <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-            {{key}}
+            {{v.name}}
             <span class="caret"></span>
           </button>
           <ul class="dropdown-menu" aria-labelledby="dropdownMenu">
