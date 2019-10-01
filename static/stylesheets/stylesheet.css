@@ -1,3 +1,20 @@
+.canvas {
+    display:block;
+    position:relative;
+    width:1024px;
+    height:1024px;
+    background_color:blue;
+}
+.dropdown1 {
+    position:absolute;
+    left:100px;
+    right:100px;
+}
+
+
+
+
+
 .dropdown-submenu {
     position: relative;
 }
