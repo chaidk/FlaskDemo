@@ -21,7 +21,9 @@ def info(uid):
     user=user_dict.get(uid).get('name')
     pwd=user_dict.get(uid).get('pwd')
     return render_template('info.html',user=user,pwd=pwd)
-
+@app.route('/dropdown',methods=["GET"])
+def dropdown():
+    return render_template('dropdown.html',user_dict=user_dict)
 if __name__ == '__main__':
     user_dict={
         1:{'name':"user1",'pwd':"pwd1"},
