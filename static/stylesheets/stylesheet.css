@@ -1,16 +1,17 @@
+.search {
+    height:50px;
+}
 .drawing {
     display:block;
     position:relative;
     width:2000px;
     height:2586px;
-    top:100px;
 }
 .bus10-w-3b {
     position:absolute;
     top:1700px;
     left:180px;
 }
-
 
 
 

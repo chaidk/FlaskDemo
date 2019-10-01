@@ -24,14 +24,57 @@ def info(uid):
     return render_template('info.html',user=user,pwd=pwd)
 @app.route('/dropdown',methods=["GET"])
 def dropdown():
-    return render_template('dropdown.html',user_dict=user_dict)
+    return render_template('dropdown.html',user_dict=user_dict,asdf=dropdownTemplate()%'qwe')
+def dropdownTemplate():
+    template = """
+    <div class="dropdown">
+          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            %s
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenu">
+              <li class="dropdown-submenu">
+                  <a class="dropdown-toggle" tabindex="-1" href="#">停电影响用户</a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu">
+                          <li class="dropdown-submenu">
+                              <a class="dropdown-toggle" tabindex="-1" href="#">1</a>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu">
+                                    <li><a tabindex="-1" href="#">高低压接线图</a></li>
+                                    <li><a tabindex="-1" href="#">定值单</a></li>
+                                    <li><a tabindex="-1" href="#">自备电源情况</a></li>
+                                    <li><a tabindex="-1" href="#">调度协议</a></li>
+                                    <li><a tabindex="-1" href="#">现场规程</a></li>
+                                    <li><a tabindex="-1" href="#">批准书</a></li>
+                                </ul>
+                          </li>
+                        <li><a tabindex="-1" href="#">2</a></li>
+                        <li><a tabindex="-1" href="#">3</a></li>
+                    </ul>
+              </li>
+              <li class="dropdown-submenu">
+                  <a class="dropdown-toggle" tabindex="-1" href="#">设备参数</a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu">
+                        <li><a tabindex="-1" href="#">一次参数</a></li>
+                        <li><a tabindex="-1" href="#">额定载流</a></li>
+                    </ul>
+              </li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">设备故障预案</a></li>
+            <li><a href="#">相关定值单</a></li>
+          </ul>
+        </div>
+    """
+    return template
+
+
+
 if __name__ == '__main__':
     user_dict={
         1:{'name':"user1",'pwd':"pwd1"},
         2:{'name':"user2",'pwd':"pwd2"},
         3:{'name':"user3",'pwd':"pwd3"}
     }
-
+    asdf=list()
     app.run()
 
 

@@ -18,6 +18,18 @@
         $('.dropdown-toggle').dropdown()</script>
     </head>
     <body>
+        <div class="search">
+            <button class="btn btn-default" type="button">查找</button>
+            <div class="col-lg-6">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="查找内容">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="button">查找</button>
+                    </span>
+                </div>
+            </div>
+        </div><
+        </div>
         <div class="drawing center-block">
             <img class="img-responsive" src="{{url_for('static', filename='imgs/2000.2586.jpg')}}" alt="">
             <div class="dropdown bus10-w-3b">
@@ -57,7 +69,7 @@
               </ul>
             </div>
         </div>
-    {% for k,v in user_dict.items() %}
+    <!--{% for k,v in user_dict.items() %}
     <div class="dropdown">
           <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
             {{v.name}}
@@ -94,11 +106,10 @@
             <li><a href="#">相关定值单</a></li>
           </ul>
         </div>
-
-
-
     {%  endfor %}
 
+            {{asdf|safe}}
+-->
 
 
       </body>
