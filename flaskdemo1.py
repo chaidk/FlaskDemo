@@ -1,22 +1,27 @@
 
 from flask import Flask,render_template,request,redirect
 from datetime import timedelta
+
 app = Flask(__name__)
 app.debug = True
 app.send_file_max_age_default = timedelta(seconds=1)
+
 @app.route('/index',methods=["GET"])
 def index():
     return render_template('index.html',user_dict=user_dict)
+
 @app.route('/login',methods=['GET','POST'])
 def login():
     if request.method==["GET"]:
-        return render_template('login.html',logintext=logintext)
+        return render_template('login.html')
     else:
         user = request.form.get('user')
         pwd = request.form.get('pwd')
         if user == 'user' and pwd == 'pwd':
-            return redirect('index.html')
-    return render_template('login.html',error='用户名密码错误')
+            return redirect('dropdown')
+        else:
+            return render_template('login.html',error='用户名密码错误')
+
 @app.route('/info/<int:uid>',methods=['GET'])
 def info(uid):
     user=user_dict.get(uid).get('name')
