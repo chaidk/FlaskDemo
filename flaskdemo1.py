@@ -30,7 +30,7 @@ def info(uid):
 @app.route('/dropdown',methods=["GET"])
 def dropdown():
     return render_template('dropdown.html',user_dict=user_dict,asdf=dropdownTemplate()%'qwe')
-def dropdownTemplate():
+def dropdownTemplate():                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
     template = """
     <div class="dropdown">
           <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
