@@ -29,7 +29,7 @@ def info(uid):
     return render_template('info.html',user=user,pwd=pwd)
 @app.route('/dropdown',methods=["GET"])
 def dropdown():
-    return render_template('dropdown.html',user_dict=user_dict,asdf=dropdownTemplate()%'qwe')
+    return render_template('dropdown.html',user_dict=user_dict,asdf=dropdownTemplate()%'qwe',consumers=consumers,csmtext=csmtext)
 def dropdownTemplate():                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
     template = """
     <div class="dropdown">
@@ -79,6 +79,13 @@ if __name__ == '__main__':
         2:{'name':"user2",'pwd':"pwd2"},
         3:{'name':"user3",'pwd':"pwd3"}
     }
+    consumers = ['京雄高铁','廊涿城际','华北空管局','新机场建设指挥部','航站楼']
+    csm = """<a href="#" class="list-group-item %s" onclick="document.getElementsByClassName('form-control')[0].value=this.text;document.getElementsByClassName('search-result')[0].style.display='none';">%s</a>
+    """
+    importance = ['','list-group-item-danger','list-group-item-success','list-group-item-warning','list-group-item-info']
+    csmtext=""
+    for i,j in enumerate(consumers):
+        csmtext+=csm%(importance[i],j)
     asdf=list()
     app.run()
 

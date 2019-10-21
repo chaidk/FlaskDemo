@@ -21,17 +21,14 @@
             <div class="input-group">
                 <input type="text" class="form-control" placeholder="查找内容">
                 <span class="input-group-btn">
-                    <button class="btn btn-default" type="button">查找</button>
+                    <button class="btn btn-default" type="button" onclick="document.getElementsByClassName('search-result')[0].style.display='block'">查找</button>
                 </span>
             </div>
             <div class="list-group search-result">
-                <a href="#" class="list-group-item">
-                    Cras justo odio
-                </a>
-                <a href="#" class="list-group-item list-group-item-success">Dapibus ac facilisis in</a>
-                <a href="#" class="list-group-item list-group-item-danger">Morbi leo risus</a>
-                <a href="#" class="list-group-item list-group-item-info">Porta ac consectetur ac</a>
-                <a href="#" class="list-group-item list-group-item-warning">Vestibulum at eros</a>
+                <!-- {% for consumer in consumers %}
+                <a href="#" class="list-group-item" onclick="document.getElementsByClassName('form-control')[0].value=this.text">{{consumer}}</a>
+                {% endfor %} -->
+                {{csmtext|safe}}
             </div>
         </div>
         <div class="col-lg-3">
