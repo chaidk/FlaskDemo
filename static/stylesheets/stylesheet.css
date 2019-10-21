@@ -104,3 +104,11 @@ body {
   border-top-right-radius: 0;
 }
 
+/* 搜索结果 */
+.search-result{
+  position: absolute;
+  float: left;
+  z-index: 1;
+  width: 95.3%;
+  /* display: none; */
+}
